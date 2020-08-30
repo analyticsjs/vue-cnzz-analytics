@@ -58,12 +58,8 @@ const app = new Vue({
     }
   },
   mounted () {
-    this.init();
   },
   methods: {
-    init () {
-      console.log(this.$pushCNZZ);
-    },
     pv () {
       this.$pushCNZZ.pv(this.pageUrl, this.fromUrl);
     },
