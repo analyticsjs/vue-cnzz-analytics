@@ -130,7 +130,10 @@ fromUrl|否|String|来路页面的url，必须是以 `http` 或 `https` 开头�
 在 Vue 2.0 里使用
 
 ```js
-this.$pushCNZZ.pv(this.pageUrl);
+this.$pushCNZZ.pv(
+  this.pageUrl,
+  this.fromUrl
+);
 ```
 
 在 Vue 3.0 里使用
@@ -171,7 +174,8 @@ this.$pushCNZZ.event(
   this.category,
   this.action,
   this.label,
-  this.value
+  this.value,
+  this.nodeId
 );
 ```
 
