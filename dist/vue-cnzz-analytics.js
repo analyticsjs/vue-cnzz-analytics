@@ -1,6 +1,6 @@
 /** 
  * name: vue-cnzz-analytics
- * version: v1.0.0
+ * version: v2.0.0
  * author: chengpeiquan
  */
  (function (global, factory) {
