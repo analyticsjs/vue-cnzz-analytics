@@ -104,6 +104,28 @@ createApp(app)
   .mount('#app');
 ```
 
+### 在 VuePress 里使用
+
+插件也支持在Vue的静态文档 [VuePress](https://vuepress.vuejs.org/zh/) 项目里使用。
+
+在项目下的 `/docs/.vuepress` 文件夹下，创建一个 `enhanceApp.js`，按照下面的方式引入即可启动数据上报功能。
+
+官方文档传送门：[应用级别的配置 - VuePress](https://vuepress.vuejs.org/zh/guide/basic-config.html#%E5%BA%94%E7%94%A8%E7%BA%A7%E5%88%AB%E7%9A%84%E9%85%8D%E7%BD%AE)
+
+```js
+import cnzzAnalytics from 'vue-cnzz-analytics'
+
+export default ({ Vue, router }) => {
+  Vue.use(cnzzAnalytics, {
+    router: router,
+    siteIdList: [
+      11111
+    ],
+    isDebug: false
+  });
+};
+```
+
 可在开发环境打开debug模式了解相关的上报情况（上线前记得关闭debug）。
 
 ## 方法
