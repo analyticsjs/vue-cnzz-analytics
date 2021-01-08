@@ -140,7 +140,10 @@ this.$pushCNZZ.pv(this.pageUrl);
 ```js
 const { proxy } = getCurrentInstance();
 
-proxy.$pushCNZZ.pv(pageUrl.value);
+proxy.$pushCNZZ.pv(
+  pageUrl.value,
+  fromUrl.value
+);
 ```
 
 ### 手动上报事件分析
@@ -183,6 +186,7 @@ proxy.$pushCNZZ.event(
   category.value,
   action.value,
   label.value,
-  value.value
+  value.value,
+  nodeId.value
 );
 ```

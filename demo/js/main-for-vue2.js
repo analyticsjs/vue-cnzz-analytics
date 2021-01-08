@@ -44,7 +44,10 @@ const app = new Vue({
   },
   methods: {
     pv () {
-      this.$pushCNZZ.pv(this.pageUrl, this.fromUrl);
+      this.$pushCNZZ.pv(
+        this.pageUrl,
+        this.fromUrl
+      );
     },
     event () {
       this.$pushCNZZ.event(
