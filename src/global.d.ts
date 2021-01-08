@@ -14,6 +14,8 @@ declare global {
   interface Vue {
     prototype: any
     $pushCNZZ: PushCNZZ
+    version: number | string
+    config: any
   }
   
   interface To {
