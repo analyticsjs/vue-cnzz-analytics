@@ -32,24 +32,27 @@ const app = new Vue({
   data () {
     return {
       pageUrl: '',
+      fromUrl: '',
       category: '',
       action: '',
       label: '',
-      value: ''
+      value: '',
+      nodeId: ''
     }
   },
   mounted () {
   },
   methods: {
     pv () {
-      this.$pushCNZZ.pv(this.pageUrl);
+      this.$pushCNZZ.pv(this.pageUrl, this.fromUrl);
     },
     event () {
       this.$pushCNZZ.event(
         this.category,
         this.action,
         this.label,
-        this.value
+        this.value,
+        this.nodeId
       );
     }
   }

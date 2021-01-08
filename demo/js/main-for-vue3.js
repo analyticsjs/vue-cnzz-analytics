@@ -27,14 +27,19 @@ const app = {
 
     // 初始化要用到的数据
     const pageUrl = ref('');
+    const fromUrl = ref('');
     const category = ref('');
     const action = ref('');
     const label = ref('');
     const value = ref('');
+    const nodeId = ref('');
 
     // 提交pv的操作
     const pv = () => {
-      proxy.$pushCNZZ.pv(pageUrl.value);
+      proxy.$pushCNZZ.pv(
+        pageUrl.value,
+        fromUrl.value
+      );
     }
 
     // 提交事件的操作
@@ -43,7 +48,8 @@ const app = {
         category.value,
         action.value,
         label.value,
-        value.value
+        value.value,
+        nodeId.value
       );
     }
 
@@ -51,10 +57,12 @@ const app = {
     return {
       // 数据
       pageUrl,
+      fromUrl,
       category,
       action,
       label,
       value,
+      nodeId,
 
       // 方法
       pv,

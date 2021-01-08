@@ -33,6 +33,10 @@
         <span class="text">pageUrl</span>
         <input class="input" type="text" placeholder="输入页面的url" v-model="pageUrl">
       </label>
+      <label class="label">
+        <span class="text">fromUrl</span>
+        <input class="input" type="text" placeholder="输入来路的url" v-model="fromUrl">
+      </label>
       <button class="button" @click="pv">提交一个pv</button>
     </section>
 
@@ -53,6 +57,10 @@
       <label class="label">
         <span class="text">value</span>
         <input class="input" type="text" placeholder="输入该事件的分值" v-model="value">
+      </label>
+      <label class="label">
+        <span class="text">nodeId</span>
+        <input class="input" type="text" placeholder="输入产生该事件的元素id" v-model="nodeId">
       </label>
       <button class="button" @click="event">提交一个event</button>
     </section>
