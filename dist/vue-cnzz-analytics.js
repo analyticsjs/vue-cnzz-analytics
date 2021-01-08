@@ -111,6 +111,18 @@
       return PushCNZZ;
   }());
 
+  var getVueVersion = function (Vue) {
+      var version = 2;
+      var VUE_VERSION = String(Vue.version);
+      if (VUE_VERSION.slice(0, 2) === '2.') {
+          version = 2;
+      }
+      if (VUE_VERSION.slice(0, 2) === '3.') {
+          version = 3;
+      }
+      return version;
+  };
+
   function install(Vue, _a) {
       var router = _a.router, siteIdList = _a.siteIdList, _b = _a.isDebug, isDebug = _b === void 0 ? false : _b;
       if (typeof document === 'undefined' || typeof window === 'undefined') {
@@ -123,7 +135,13 @@
           throw new Error('[vue-cnzz-analytics] Missing tracking domain ID, add at least one of cnzz analytics.');
       }
       var pushCNZZ = new PushCNZZ(siteIdList, isDebug);
-      Vue.prototype.$pushCNZZ = pushCNZZ;
+      var VUE_VERSION = getVueVersion(Vue) || 2;
+      if (VUE_VERSION === 2) {
+          Vue.prototype.$pushCNZZ = pushCNZZ;
+      }
+      if (VUE_VERSION === 3) {
+          Vue.config.globalProperties.$pushCNZZ = pushCNZZ;
+      }
       if (siteIdList) {
           pushCNZZ.init();
       }

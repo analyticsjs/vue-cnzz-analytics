@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A data collection tool that supports reporting of single-page application data built by Vue-cli, based on cnzz statistics.",
   "main": "dist/vue-cnzz-analytics.min.js",
+  "types": "vue-cnzz-analytics.d.ts",
   "scripts": {
     "build": "rollup -c rollup.config.ts"
   },
@@ -15,6 +16,9 @@
     "vue cnzz",
     "vue umeng",
     "vue analytics",
+    "vue 3.0 cnzz",
+    "vue 3.0 umeng",
+    "vue 3.0 analytics",
     "spa analytics",
     "cnzz统计",
     "umeng统计",

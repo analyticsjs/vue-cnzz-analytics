@@ -1,5 +1,9 @@
 import PushCNZZ from '@m/pushCNZZ'
+import getVueVersion from '@m/getVueVersion'
 
+/** 
+ * 定义插件
+ */
 export default function install (Vue: Vue, { router, siteIdList, isDebug = false }: Partial<Options>) {
 
   /** 
@@ -21,7 +25,19 @@ export default function install (Vue: Vue, { router, siteIdList, isDebug = false
    * 挂载推送的方法
    */
   const pushCNZZ = new PushCNZZ(siteIdList, isDebug);
-  Vue.prototype.$pushCNZZ = pushCNZZ;
+  
+  // 获取Vue版本（获取失败则默认为2）
+  const VUE_VERSION: number = getVueVersion(Vue) || 2;
+
+  // 2.x可以直接挂载到原型上
+  if ( VUE_VERSION === 2 ) {
+    Vue.prototype.$pushCNZZ = pushCNZZ;
+  }
+
+  // 3.x必须使用这个方式来挂载
+  if ( VUE_VERSION === 3 ) {
+    Vue.config.globalProperties.$pushCNZZ = pushCNZZ;
+  }
 
   /** 
    * 部署站点并初始化
