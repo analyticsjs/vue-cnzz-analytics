@@ -1,7 +1,7 @@
 vue-cnzz-analytics 使用说明
 ===
 
-基于Vue开发的CNZZ统计插件（友盟统计），可以在 `Vue-CLI脚手架项目` 或者 `引入了Vue相关CDN的普通页面`，以及 `VuePress`项目上使用，使用本插件的项目需要引入 `Vue Router`。
+基于Vue开发的CNZZ统计插件（友盟统计），可以在 `Vue-CLI脚手架项目` 或者 `引入了Vue相关CDN的普通页面`，以及 `VuePress` 项目上使用，使用本插件的项目需要引入 `Vue Router`。
 
 > @v2.0版本更新：<br>最新版支持 Vue 3.x，同时兼容 Vue 2.x 使用，具体使用方法请看下方说明及demo。<br>对Vue 3.0感兴趣，但还在观望的同学，欢迎阅读我踩坑总结的：[Vue 3.0 学习教程](https://vue3.chengpeiquan.com/) （持续更新ing）
 
@@ -46,7 +46,7 @@ npm install vue-cnzz-analytics --save-dev
 参数|是否必填|参数类型|参数说明
 :-:|:-:|:-:|-
 router|是|object|Vue Router，本插件基于路由使用
-siteIdList|是|object Array|CNZZ统计的站点id列表，item为站点id<br>只有一个站点需要上报就保留一个item即可
+siteIdList|是|number[]|CNZZ统计的站点id列表，item为站点id<br>只有一个站点需要上报就保留一个item即可
 isDebug|否|boolean|是否开启debug模式，默认 `false`<br>开启后会在控制台打印上报信息，**上线前记得关闭**
 
 ## 使用
@@ -119,7 +119,9 @@ export default ({ Vue, router }) => {
   Vue.use(cnzzAnalytics, {
     router: router,
     siteIdList: [
-      11111
+      11111,
+      22222,
+      33333
     ],
     isDebug: false
   });
