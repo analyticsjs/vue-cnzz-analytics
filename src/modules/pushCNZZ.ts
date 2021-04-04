@@ -1,6 +1,6 @@
 import CNZZ from '@m/cnzz'
 
-/** 
+/**
  * 定义推送操作
  */
 class PushCNZZ {
@@ -8,11 +8,11 @@ class PushCNZZ {
   isDebug: boolean;
 
   constructor (siteIdList: number[], isDebug: boolean) {
-    this.siteIdList = siteIdList;
+    this.siteIdList = [...siteIdList];
     this.isDebug = isDebug;
   }
 
-  /** 
+  /**
    * 批量部署站点
    */
   init () {
@@ -22,7 +22,7 @@ class PushCNZZ {
     });
   }
 
-  /** 
+  /**
    * 批量提交pv上报
    */
   pv (pageUrl: string, fromUrl?: string) {
@@ -32,7 +32,7 @@ class PushCNZZ {
     });
   }
 
-  /** 
+  /**
    * 批量提交事件上报
    */
   event (category: string, action: string, label: string, value: number, nodeId: string) {
