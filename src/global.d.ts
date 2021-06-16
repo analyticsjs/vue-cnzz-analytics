@@ -1,24 +1,8 @@
-import PushCNZZ from '@m/pushCNZZ'
+/* eslint-disable no-unused-vars */
+export {}
 
 declare global {
   interface Window {
-    _czc: any;
-  }
-
-  interface Options {
-    router: any;
-    siteIdList: number[];
-    isDebug: boolean;
-  }
-
-  interface Vue {
-    prototype: any;
-    $pushCNZZ: PushCNZZ;
-    version: number | string;
-    config: any;
-  }
-
-  interface To {
-    fullPath: string;
+    _czc: any
   }
 }
