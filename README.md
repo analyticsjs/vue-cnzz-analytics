@@ -1,3 +1,7 @@
+本包不再维护，请使用 [@web-analytics/vue](https://analytics.js.org/vue/) ，在保持原有功能的基础上，具有更简单的使用方法。
+
+---
+
 <p align='center'>
   <img src="https://cdn.jsdelivr.net/gh/chengpeiquan/assets-storage/img/2021/04/20210405010440.png" alt="vue-cnzz-analytics" />
 </p>
